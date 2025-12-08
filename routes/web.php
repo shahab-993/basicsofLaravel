@@ -18,3 +18,9 @@ Route::get('getrequestvariables', [LearnLaravelBasicsController::class, 'getRequ
 Route::get('showdatetimeinfo', [LearnLaravelBasicsController::class, 'showDateTimeInfo']);
 
 Route::get('debuggingtechniquesdemo', [LearnLaravelBasicsController::class, 'debuggingtechniquesdemo']);
+
+
+Route::get('loggingdemo', [LearnLaravelBasicsController::class, 'loggingDemo']);
+
+
+Route::get('builtindirectivesdemo', [LearnLaravelBasicsController::class, 'builtInDirectivesDemo']);
