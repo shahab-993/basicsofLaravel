@@ -24,3 +24,8 @@ Route::get('loggingdemo', [LearnLaravelBasicsController::class, 'loggingDemo']);
 
 
 Route::get('builtindirectivesdemo', [LearnLaravelBasicsController::class, 'builtInDirectivesDemo']);
+
+Route::get('showproducts', [LearnLaravelBasicsController::class, 'showProducts']);
+
+
+Route::get('passmodeltobiewdemo', [LearnLaravelBasicsController::class, 'passModelToBiewDemo']);

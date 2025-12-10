@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Player;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Barryvdh\Debugbar\Facade as Debugbar;
-use DebugBar\DebugBar as DebugBarAlias;
 use Illuminate\Support\Facades\Log;
+use DebugBar\DebugBar as DebugBarAlias;
+use Barryvdh\Debugbar\Facade as Debugbar;
 
 class LearnLaravelBasicsController extends Controller
 {
@@ -114,7 +115,7 @@ class LearnLaravelBasicsController extends Controller
 
     public function builtInDirectivesDemo(){
         $data=[
-            'name'=>'Ahmad khan shahab',
+            'name'=>'Ahmad khan',
             'inVisible'=> true,
             'loggedIn'=> false,
             'countryCode'=>'IN',
@@ -123,6 +124,52 @@ class LearnLaravelBasicsController extends Controller
         ];
         return view('builtindirectivesdemo',['data'=>$data]);
     }
+
+    public function showProducts(){
+        $products=[];
+
+        $processors=[
+            ['Category'=>'AMD','processors'=>['Ryzen 3990', 'Ryzen 3970','Ryzen 3960','Ryzen 3950']],
+            ['Category'=>'Intel','processors'=>['Xeon 8362','Xeon 8358','Xeon 8380']]
+        ];
+
+        $products[]=['productID' =>1, 'productName'=>'AMD Ryzen 3990','quantity'=>'100','unitsInStock'=>50,'disContinued'=>false,'cost'=>3000];
+        $products[]=['productID' =>2, 'productName'=>'AMD Ryzen 3334','quantity'=>'100','unitsInStock'=>50,'disContinued'=>false,'cost'=>3600];
+        $products[]=['productID' =>3, 'productName'=>'AMD Ryzen 3989','quantity'=>'100','unitsInStock'=>50,'disContinued'=>false,'cost'=>3000];
+        $products[]=['productID' =>4, 'productName'=>'AMD Ryzen 78541','quantity'=>'100','unitsInStock'=>50,'disContinued'=>false,'cost'=>6000];
+        $products[]=['productID' =>5, 'productName'=>'AMD Ryzen 3990','quantity'=>'100','unitsInStock'=>50,'disContinued'=>false,'cost'=>5000];
+        $products[]=['productID' =>6, 'productName'=>'AMD Ryzen 54545','quantity'=>'100','unitsInStock'=>50,'disContinued'=>true,'cost'=>3000];
+        $products[]=['productID' =>7, 'productName'=>'AMD Ryzen 3890','quantity'=>'100','unitsInStock'=>50,'disContinued'=>true,'cost'=>8000];
+        $products[]=['productID' =>8, 'productName'=>'AMD Ryzen 3990','quantity'=>'100','unitsInStock'=>50,'disContinued'=>true,'cost'=>3000];
+        $totalProducts=count($products);
+        return view('showproducts',[
+            'Products'=>$products,
+            'TotalProducts'=>$totalProducts,
+            'Processors'=>$processors,
+        ]);
+    }
+
+
+    public function passModelToBiewDemo(){
+        $player = new Player(['name'=>'Chad Menis','country'=>'USA', 'sport'=>'UFC']);
+        $players=[
+            new Player(['name'=>'Ahmad','country'=>'AFG', 'sport'=>'Cricket']),
+            new Player(['name'=>'Mahmood','country'=>'AFG', 'sport'=>'Cricket']),
+            new Player(['name'=>'Kalid','country'=>'AFG', 'sport'=>'USA']),
+            new Player(['name'=>'Usman','country'=>'AFG', 'sport'=>'Cricket']),
+            new Player(['name'=>'Naveed','country'=>'AFG', 'sport'=>'UFC']),
+            new Player(['name'=>'Rewan','country'=>'AFG', 'sport'=>'Fotball']),
+        ];
+        return view('passmodeltobiewdemo',compact('player','players'));
+    }
+
+
+
+
+
+
+
+
 
 
 
