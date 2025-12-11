@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CustomDirectiveController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearnLaravelBasicsController;
 
@@ -29,3 +31,5 @@ Route::get('showproducts', [LearnLaravelBasicsController::class, 'showProducts']
 
 
 Route::get('passmodeltobiewdemo', [LearnLaravelBasicsController::class, 'passModelToBiewDemo']);
+
+Route::get('/customdirctives', [CustomDirectiveController::class, 'index']);
