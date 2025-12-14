@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuiltInHelperMethodsDemoController;
 use App\Http\Controllers\CustomDirectiveController;
 
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,6 @@ Route::get('showproducts', [LearnLaravelBasicsController::class, 'showProducts']
 Route::get('passmodeltobiewdemo', [LearnLaravelBasicsController::class, 'passModelToBiewDemo']);
 
 Route::get('/customdirctives', [CustomDirectiveController::class, 'index']);
+
+Route::get('/builtinherpers', [BuiltInHelperMethodsDemoController::class, 'index']);
+
