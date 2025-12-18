@@ -37,3 +37,11 @@ Route::get('/customdirctives', [CustomDirectiveController::class, 'index']);
 
 Route::get('/builtinherpers', [BuiltInHelperMethodsDemoController::class, 'index']);
 
+Route::get('/getallusers', [LearnLaravelBasicsController::class, 'getallusers']);
+
+Route::get('/showallusersusingcards', [LearnLaravelBasicsController::class, 'showAllUsersUseingCards']);
+
+Route::get('/showuserdetails', [LearnLaravelBasicsController::class, 'showUsersDetails']);
+Route::post('/showuserdetails', [LearnLaravelBasicsController::class, 'showUsersDetails']);
+
+

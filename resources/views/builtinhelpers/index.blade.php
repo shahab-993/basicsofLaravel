@@ -1,3 +1,6 @@
+@php
+use App\Filters\CustomFilters as ch;
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,6 +80,8 @@
 
         <p>Previose Fight: {{ $data['PreviousFight'] ?? 'Not Availabel' }}</p>
         <p>Next Fight: {{ $data['Nextfight'] ?? 'Not Availabel' }}</p>
+        <hr/>
+        
     </div>
 </body>
 

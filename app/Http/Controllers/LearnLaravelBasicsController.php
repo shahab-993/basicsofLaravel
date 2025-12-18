@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 use DebugBar\DebugBar as DebugBarAlias;
 use Barryvdh\Debugbar\Facade as Debugbar;
+use Illuminate\Support\Facades\Http;
 
 class LearnLaravelBasicsController extends Controller
 {
@@ -164,7 +165,45 @@ class LearnLaravelBasicsController extends Controller
     }
 
 
+    public function getAllUsers(){
+        $response=Http::get("https://fakestoreapi.com/users");
+        $users=$response->json();
+        return view('getallusers',compact('users'));
+    }
 
+    public function showAllUsersUseingCards(){
+        $image="https://i.pravatar.cc";
+        $response=Http::get("https://fakestoreapi.com/users");
+        $users=$response->json();
+        return view('showallusersusingcards',compact('users','image'));
+    }
+
+    public function showUsersDetails(Request $request){
+       $id=1;
+        if($request->isMethod('post')){
+        $id =$request->useridcounter;
+        if($request->get('btnNext')){
+            $id=$id+1;
+            if($id>=11){
+                $id=1;
+            }
+
+        }else if($request->get('btnPrevious')){
+                   $id=$id-1;
+            if($id<=0){
+                $id=1;
+            }
+
+        }else{
+            $id=1;
+        }
+
+        }
+        $image="https://i.pravatar.cc";
+        $response=Http::get("https://fakestoreapi.com/users/" . $id);
+        $users=$response->json();
+        return view('showuserdetails',compact('users','image'));
+    }
 
 
 
