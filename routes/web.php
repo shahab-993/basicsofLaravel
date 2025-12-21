@@ -5,7 +5,7 @@ use App\Http\Controllers\CustomDirectiveController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LearnLaravelBasicsController;
-
+use App\Http\Controllers\ViewComponentsDemoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,6 +42,11 @@ Route::get('/getallusers', [LearnLaravelBasicsController::class, 'getallusers'])
 Route::get('/showallusersusingcards', [LearnLaravelBasicsController::class, 'showAllUsersUseingCards']);
 
 Route::get('/showuserdetails', [LearnLaravelBasicsController::class, 'showUsersDetails']);
+
+
 Route::post('/showuserdetails', [LearnLaravelBasicsController::class, 'showUsersDetails']);
+
+
+Route::get('/workwithcomponents', [ViewComponentsDemoController::class, 'index'])->name('workwithcomponentscd.index');
 
 
