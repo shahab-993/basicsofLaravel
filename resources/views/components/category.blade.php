@@ -1,7 +1,7 @@
 <div class="">
     <label for="">Select a Category</label>
     <div class="">
-        <select class="form-select category-dropdown"  onchange="changeCategory(this)">
+        <select id="category-dropdown" class="form-select "  onchange="changeCategory(this)">
             @foreach ($categories  as $Category )
             <option value="{{ $Category }}">{{ $Category }}</option>
 

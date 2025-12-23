@@ -49,4 +49,5 @@ Route::post('/showuserdetails', [LearnLaravelBasicsController::class, 'showUsers
 
 Route::get('/workwithcomponents', [ViewComponentsDemoController::class, 'index'])->name('workwithcomponentscd.index');
 
+Route::get('/workwithcomponents/product_list', [ViewComponentsDemoController::class, 'productList'])->name('workwithcomponentscd.productList');
 
