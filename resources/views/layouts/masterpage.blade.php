@@ -26,12 +26,13 @@
 
 </head>
 <body>
- <div class="main-content mt-5" id="main">
-    <div class="container-fluid">
-        <header class="bg-danger text-white text-center p-2">
-            <h2><span>Working with view Components Demo</span></h2>
-        </header>
-        @yield('content')
+ <div class="content">
+        <div class="alert alert-primary" role="alert">
+            @if (Session::has('success'))
+                {{ Session::get('success') }}
+            @endif
+        </div>
+       <div class=""> @yield('content')</div>
     </div>
  </div>
 </body>
